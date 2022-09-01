@@ -1,0 +1,87 @@
+<html>
+<title>Assignment5</title>
+<head>
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            background-color: #B2A876;
+            padding: 15px;
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 15px;
+        }
+
+        .body-txt {
+            background-color: #D5CEBA;
+            padding: 15px;
+        }
+
+        .txt-mini {
+            font-size: 12px;
+            padding-left: 25px;
+        }
+
+        .copyright {
+            font-weight: 800;
+        }
+        li.italic{
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Using File VersionInfo</h1>
+        <div class="body-txt">
+            <p>
+                Getting the version number of any managed/unmanaged DLL or executable in .NET 1.0,if I recall
+                correctly, required some magic incantations with PInvike.
+            </p>
+            <p>
+                I just dicovered the file VersionInfo class from System.diagnostics:
+            </p>
+            <p class="txt-mini">
+                FileVersionInfo versionInfo;<br>
+                versionInfo=FileVersion.GetVersionInfo@"e:\win2003\system32\svchost.exe");<br>
+                MessageBox.Show(versionInfo.ToString());
+            </p>
+            </p>
+            <p>
+                To use the class then,all you need to do is:
+            </p>
+            <ol>
+                <li class="italic">Invoke the static getVersionInfo method</li>
+                <li>Start using the properties of the resulting object</li>
+            </ol>
+            <p>
+                File version is a 64 bit number.
+            </p>
+            <ul>
+                <li>The first 16 bits are the major number</li>
+                <li>The next 16 bits are the minor number</li>
+                <li>The third set of 16 bits are the build number</li>
+                <li>The last 16 bits are the private build number</li>
+            </ul>
+        </div>
+        <p class="copyright">
+            (c) 2005 Copyright notice
+        </p>
+    </div>
+</body>
+
+</html>
+
+  
